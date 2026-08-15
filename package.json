@@ -1,0 +1,31 @@
+{
+  "name": "@dsyu400-arch/alisjob",
+  "version": "1.0.0",
+  "description": "响应式投资收益与持仓数据仪表盘",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "index.html",
+    "styles.css",
+    "app.js",
+    "README.md"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsyu400-arch/alisjob.git"
+  },
+  "homepage": "https://github.com/dsyu400-arch/alisjob#readme",
+  "bugs": {
+    "url": "https://github.com/dsyu400-arch/alisjob/issues"
+  },
+  "keywords": [
+    "dashboard",
+    "portfolio",
+    "investment",
+    "static-site"
+  ]
+}
