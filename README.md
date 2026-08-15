@@ -18,3 +18,24 @@ python3 -m http.server 4173
 ```
 
 浏览器打开 `http://localhost:4173`。
+
+## GitHub Packages
+
+每次发布 GitHub Release 后，仓库会自动构建并发布两种包：
+
+- npm：`@dsyu400-arch/alisjob`
+- 容器镜像：`ghcr.io/dsyu400-arch/alisjob`
+
+安装 npm 包：
+
+```bash
+npm install @dsyu400-arch/alisjob --registry=https://npm.pkg.github.com
+```
+
+运行容器镜像：
+
+```bash
+docker run --rm -p 8080:80 ghcr.io/dsyu400-arch/alisjob:latest
+```
+
+然后打开 `http://localhost:8080`。
