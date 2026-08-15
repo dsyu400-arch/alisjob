@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f6fa" />
+    <meta name="description" content="投资收益与持仓数据仪表盘" />
+    <title>投资收益仪表盘</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>资产总览</span>
+      </div>
+      <div class="market-status"><span></span> 数据已更新</div>
+    </header>
+
+    <main class="dashboard">
+      <section class="metric-grid" aria-label="核心投资指标">
+        <article class="metric-card asset-card">
+          <div class="metric-copy">
+            <p class="eyebrow">总资产 <span>›</span></p>
+            <strong class="value neutral">23,667.80</strong>
+            <p class="subtle">较昨日 <span class="positive">+40.00</span></p>
+          </div>
+          <div class="chart-wrap" aria-label="总资产走势折线图">
+            <svg viewBox="0 0 390 100" role="img">
+              <defs><linearGradient id="blueFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3468ff" stop-opacity=".16"/><stop offset="1" stop-color="#3468ff" stop-opacity="0"/></linearGradient></defs>
+              <path class="area blue-area" d="M5 90 L60 90 L95 50 L116 50 L138 70 L185 70 L205 52 L222 68 L240 38 L260 38 L278 23 L295 18 L312 58 L328 25 L346 18 L364 41 L380 18 L394 52 L394 100 L5 100Z" />
+              <path class="line blue" d="M5 90 L60 90 L95 50 L116 50 L138 70 L185 70 L205 52 L222 68 L240 38 L260 38 L278 23 L295 18 L312 58 L328 25 L346 18 L364 41 L380 18 L394 52" />
+            </svg>
+          </div>
+        </article>
+
+        <article class="metric-card">
+          <div class="metric-copy">
+            <p class="eyebrow">当日盈亏</p>
+            <strong class="value positive">+40.00</strong>
+            <p class="rate positive">+0.17%</p>
+          </div>
+          <div class="chart-wrap spark" aria-label="当日盈亏走势折线图">
+            <svg viewBox="0 0 390 100" role="img">
+              <defs><linearGradient id="redFill1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff3347" stop-opacity=".15"/><stop offset="1" stop-color="#ff3347" stop-opacity="0"/></linearGradient></defs>
+              <path class="area red-area-1" d="M2 28 L8 32 L14 25 L24 27 L36 22 L48 19 L60 21 L73 18 L85 20 L97 18 L110 21 L118 17 L132 19 L145 17 L158 19 L170 18 L182 19 L196 17 L210 18 L226 14 L240 15 L252 12 L264 14 L280 19 L296 18 L310 20 L325 18 L338 22 L350 19 L364 21 L389 18 L389 100 L2 100Z"/>
+              <path class="line red" d="M2 28 L8 32 L14 25 L24 27 L36 22 L48 19 L60 21 L73 18 L85 20 L97 18 L110 21 L118 17 L132 19 L145 17 L158 19 L170 18 L182 19 L196 17 L210 18 L226 14 L240 15 L252 12 L264 14 L280 19 L296 18 L310 20 L325 18 L338 22 L350 19 L364 21 L389 18"/>
+            </svg>
+          </div>
+        </article>
+
+        <article class="metric-card">
+          <div class="metric-copy">
+            <p class="eyebrow">本月盈亏 <span>›</span></p>
+            <strong class="value positive">+2,670.10</strong>
+            <p class="rate positive">+12.78%</p>
+          </div>
+          <div class="chart-wrap" aria-label="本月盈亏走势折线图">
+            <svg viewBox="0 0 390 100" role="img">
+              <defs><linearGradient id="redFill2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff3347" stop-opacity=".14"/><stop offset="1" stop-color="#ff3347" stop-opacity="0"/></linearGradient></defs>
+              <path class="area red-area-2" d="M4 76 L44 80 L84 56 L126 35 L166 22 L205 21 L244 8 L282 20 L322 17 L386 2 L386 100 L4 100Z"/>
+              <path class="line red" d="M4 76 L44 80 L84 56 L126 35 L166 22 L205 21 L244 8 L282 20 L322 17 L386 2"/>
+            </svg>
+          </div>
+        </article>
+
+        <article class="metric-card">
+          <div class="metric-copy">
+            <p class="eyebrow">今年盈亏 <span>›</span></p>
+            <strong class="value positive">+7,880.72</strong>
+            <p class="rate positive">+33.07%</p>
+          </div>
+          <div class="chart-wrap" aria-label="今年盈亏走势折线图">
+            <svg viewBox="0 0 390 100" role="img">
+              <defs><linearGradient id="redFill3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff3347" stop-opacity=".16"/><stop offset="1" stop-color="#ff3347" stop-opacity="0"/></linearGradient></defs>
+              <path class="area red-area-3" d="M2 49 L11 44 L20 50 L29 42 L39 40 L48 44 L55 65 L61 38 L68 52 L78 40 L90 42 L96 29 L124 30 L132 43 L139 86 L146 60 L154 70 L162 55 L170 61 L180 43 L190 49 L198 42 L208 45 L220 56 L228 67 L236 62 L246 29 L332 29 L348 30 L358 25 L366 28 L374 14 L382 8 L390 10 L390 100 L2 100Z"/>
+              <path class="line red" d="M2 49 L11 44 L20 50 L29 42 L39 40 L48 44 L55 65 L61 38 L68 52 L78 40 L90 42 L96 29 L124 30 L132 43 L139 86 L146 60 L154 70 L162 55 L170 61 L180 43 L190 49 L198 42 L208 45 L220 56 L228 67 L236 62 L246 29 L332 29 L348 30 L358 25 L366 28 L374 14 L382 8 L390 10"/>
+            </svg>
+          </div>
+        </article>
+
+        <article class="metric-card allocation-card">
+          <div class="metric-copy">
+            <p class="eyebrow">仓位 <span>›</span></p>
+            <strong class="value neutral">33.32%</strong>
+            <p class="subtle">低于目标仓位 16.68%</p>
+          </div>
+          <div class="donut" role="img" aria-label="仓位占比 33.32%"><span>33%</span></div>
+        </article>
+
+        <article class="metric-card comparison-card">
+          <div class="metric-copy">
+            <p class="eyebrow">盈亏对比 <span>›</span></p>
+            <strong class="value positive">+2,670.10 <small>本月</small></strong>
+            <p class="rate positive">+1,008.84 <small>上月</small></p>
+          </div>
+          <div class="bar-chart" role="img" aria-label="月度盈亏柱状对比图">
+            <i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="r1"></i><i class="b4"></i><i class="r2"></i><i class="b5"></i><i class="b6"></i><i class="r3"></i><i class="z1"></i><i class="r4"></i><i class="r5"></i>
+          </div>
+        </article>
+
+        <article class="metric-card win-card">
+          <div class="metric-copy">
+            <p class="eyebrow">胜率对比</p>
+            <strong class="value positive">100.00% <small>本月</small></strong>
+            <p class="rate positive">100.00% <small>上月</small></p>
+          </div>
+          <div class="win-chart" role="img" aria-label="本月与上月胜率均为百分之百">
+            <div class="goal"><span>50%</span></div>
+            <div class="mini-bars"><i></i><i></i><i></i><i class="on tall"></i><i></i><i class="on tall"></i><i class="on mid"></i><i class="on tall"></i><i></i><i class="on tall"></i><i class="on tall"></i></div>
+          </div>
+        </article>
+
+        <article class="metric-card cash-card">
+          <div class="metric-copy">
+            <p class="eyebrow">现金余额</p>
+            <strong class="value neutral">15,782.80</strong>
+            <p class="subtle">可用资金充足</p>
+          </div>
+          <div class="cash-icon" aria-hidden="true">¥</div>
+        </article>
+      </section>
+
+      <section class="positions-panel">
+        <div class="panel-head">
+          <div class="tabs" role="tablist" aria-label="投资记录类型">
+            <button class="tab active" data-tab="positions" role="tab" aria-selected="true">持仓列表</button>
+            <button class="tab" data-tab="closed" role="tab" aria-selected="false">已清仓</button>
+            <button class="tab" data-tab="history" role="tab" aria-selected="false">交易记录</button>
+          </div>
+          <div class="panel-actions">
+            <span class="updated">最新上传时间：2026-08-15 23:22</span>
+            <button class="text-btn" id="helpBtn">如何上传数据</button>
+            <button class="pill-btn" id="exportBtn">数据导出</button>
+            <button class="pill-btn" id="manageBtn">持仓管理</button>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>备注</th><th>明细</th><th>代码</th><th>名称</th><th>持有金额</th><th>当日盈亏<small>08-14</small></th><th>当日盈亏率<small>08-14</small></th><th>持有盈亏</th><th>持有盈亏率</th><th>累计盈亏</th><th>累计盈亏率</th><th>本周盈亏</th><th>本月盈亏</th><th>今年盈亏</th><th>仓位</th></tr>
+            </thead>
+            <tbody id="positionRows">
+              <tr><td><button class="icon-btn" aria-label="编辑备注">✎</button></td><td><button class="icon-btn" aria-label="查看明细">▣</button></td><td>513530</td><td>XD港股红</td><td>7,885.00</td><td class="positive">+40.00</td><td class="positive">+0.51%</td><td class="positive">+20.29</td><td class="positive">+0.26%</td><td class="positive">+20.29</td><td>—</td><td class="positive">+55.00</td><td class="positive">+27.64</td><td class="positive">+27.64</td><td>33.32%</td></tr>
+              <tr class="total"><td colspan="4">汇总</td><td>7,885.00</td><td class="positive">+40.00</td><td class="positive">+0.17%</td><td class="positive">+20.29</td><td class="positive">+0.26%</td><td></td><td></td><td class="positive">+55.00</td><td class="positive">+27.64</td><td class="positive">+27.64</td><td>33.32%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="empty-state" id="emptyState" hidden><span>暂无数据</span><p>这里会显示对应的投资记录</p></div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
