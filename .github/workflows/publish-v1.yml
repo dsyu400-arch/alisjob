@@ -1,0 +1,83 @@
+name: Publish v1.0.0
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/publish-v1.yml
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  npm-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://npm.pkg.github.com
+          scope: '@dsyu400-arch'
+
+      - name: Verify package contents
+        run: npm pack --dry-run
+
+      - name: Publish npm package
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  container-package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Sign in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and publish image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          platforms: linux/amd64,linux/arm64
+          tags: |
+            ghcr.io/dsyu400-arch/alisjob:1.0.0
+            ghcr.io/dsyu400-arch/alisjob:latest
+          labels: |
+            org.opencontainers.image.source=https://github.com/dsyu400-arch/alisjob
+            org.opencontainers.image.version=1.0.0
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  release:
+    needs: [npm-package, container-package]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build release archive
+        run: zip -9 alisjob-dashboard-v1.0.0.zip index.html styles.css app.js README.md LICENSE
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create v1.0.0 alisjob-dashboard-v1.0.0.zip \
+            --target "${GITHUB_SHA}" \
+            --title "投资收益仪表盘 v1.0.0" \
+            --notes "首个正式版本：响应式投资收益仪表盘，包含持仓数据展示、图表、标签切换与 CSV 导出。同步发布 npm 包和 GHCR 容器镜像。"
